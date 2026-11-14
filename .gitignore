@@ -1,0 +1,20 @@
+# Java build output
+*.class
+*.jar
+/target/
+/build/
+/out/
+.gradle/
+
+# Local editor files
+.idea/
+*.iml
+.vscode/
+
+# Credentials and local resources
+.env
+.env.*
+!.env.example
+/secrets/
+/data/
+*.pdf
