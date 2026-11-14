@@ -7,3 +7,4 @@
 - Use Java 21, already installed. Choose a build tool only when the project needs one.
 - Keep the GitHub repository private until the owner explicitly requests a visibility change.
 - Never commit sponsor keys, access codes, credentials, or local datasets.
+- For Exa API work, read `.agents/skills/build-with-exa/SKILL.md` and its relevant references as the canonical source. The local launcher loads `EXA_API_KEY` from the ignored `.env` file.
