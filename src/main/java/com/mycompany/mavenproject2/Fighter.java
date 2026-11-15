@@ -16,6 +16,8 @@ public class Fighter
     int hp;
     int healsLeft; //i guess we want these to be inherent to each fighter
    //as a litte twist on the nomral formula.
+    int maxHp;
+    int attackPower;
     //int whoOwns;
     Fighter(String name, int hp, int healsLeft, int maxHp, int attackPower)
     {
@@ -33,6 +35,11 @@ public class Fighter
         if (this.healsLeft > 0)
         {
             this.hp=(this.hp + 5);
+                if(this.hp > this.maxHp)
+                {
+                this.hp = this.maxHp;
+                //this fixes the issue if healing exceeds max
+                }
             this.healsLeft--;
             return true;
         }
@@ -53,7 +60,7 @@ public class Fighter
         //types, etc.
         //remmebe rthat this is 0 indexed.
         Random randomNum = new Random();
-        int damage = randomNum.nextInt(this.attackPower);
+        int damage = randomNum.nextInt(this.attackPower + 1);
         return damage;
     }
         //2 = the user, 1 = a protected enemy, 0 = capturab;e/recuritable enemy
