@@ -12,15 +12,13 @@ import com.google.gson.JsonParser;
 
 public class GeminiConnector {
 
-    public static String selectAction() throws MissingKeyException {
+    public static String selectAction(Fighter player, Fighter enemy) throws MissingKeyException {
         String apiKey = System.getenv("GEMINI_API_KEY");
         if (apiKey == null) {
             throw new MissingKeyException("Error: GEMINI_API_KEY not set (setx on Windows or export in Linux/WSL).");
         }
-
-        String jsonBody = """
-                {"contents":[{"parts":[{"text":"Reply with just: 1|Bring it on!"}]}]}
-                """;
+  
+        
 
         try {
             HttpClient client = HttpClient.newHttpClient();
