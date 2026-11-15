@@ -146,5 +146,11 @@ public class Mavenproject2
    }
 
 
+class MissingKeyException extends Exception {
+    public MissingKeyException(String message) {
+        super(message);
+    }
+}
+
 
 
