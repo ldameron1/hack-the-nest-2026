@@ -13,8 +13,9 @@ import com.google.gson.JsonParser;
 public class Mavenproject2 
 {
 
-   public static void main(String[] args) 
+   public static void main(String[] args) throws MissingKeyException 
    {
+       //System.out.println(GeminiConnector.askTest());
         Scanner input = new Scanner(System.in);
          Random randomNum = new Random();
         
@@ -151,6 +152,5 @@ class MissingKeyException extends Exception {
         super(message);
     }
 }
-
 
 
