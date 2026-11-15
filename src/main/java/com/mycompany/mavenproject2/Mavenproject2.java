@@ -24,6 +24,7 @@ public class Mavenproject2
 
         //String name, int hp, int healsLeft)
         Fighter player;
+        //= new Fighter(default,0,0,0);
           switch (choice)
           {
                 case 1:
@@ -36,6 +37,7 @@ public class Mavenproject2
                     break;
                 case 3:
                     //sam the snail
+                    player = new Fighter("player", 10, 10, 50, 4 );
                     break;
                 default:
                     System.out.println("Valid option not received, selecting ");
@@ -54,7 +56,7 @@ public class Mavenproject2
                 while (player.hp > 0 && enemy.hp > 0) {
                 System.out.println("Select Option (type, then hit enter): 1. attack 2. heal");
                 choice = input.nextInt();
-                
+                //hmm, what happens if i put soemthing other than int in? i guess headling is a reasonable fallback
                 if (choice == 1)
                 {
                 int damage = player.attack(enemy);
