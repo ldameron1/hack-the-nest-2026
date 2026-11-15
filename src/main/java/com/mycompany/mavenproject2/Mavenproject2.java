@@ -5,6 +5,7 @@
 package com.mycompany.mavenproject2;
 import java.util.Random;
 import java.util.Scanner;
+import com.google.gson.JsonParser;
 /**
  *
  * @author ld
