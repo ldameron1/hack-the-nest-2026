@@ -12,9 +12,9 @@ import com.google.gson.JsonParser;
  */
 public class Mavenproject2 
 {
-
+   
    public static void main(String[] args) throws MissingKeyException 
-   {
+   {    boolean aiMode = true;
        //System.out.println(GeminiConnector.askTest());
         Scanner input = new Scanner(System.in);
          Random randomNum = new Random();
@@ -98,6 +98,8 @@ public class Mavenproject2
                 }
             }
             //mnow enemy turn (only if still alive)
+            if (aiMode = false)
+            {
             if (enemy.hp > 0)
             {
             //Random randomNum = new Random();
@@ -131,7 +133,63 @@ public class Mavenproject2
                     }
                 }
             }
+            }
+            else
+            {
+               {
+            if (enemy.hp > 0)
+            {
+            //Random randomNum = new Random(); - replaced with ai
+            
+                String aiReply = GeminiConnector.selectAction(player, enemy);
+                int choice2; //thanks nebeans for siwthcing to swtich
+                System.out.println("Gemini's selection was: " + aiReply);
+                switch (aiReply) {
+                    case "1":
+                        choice2 = 1;
+                        break;
+                    case "2":
+                        choice2 = 0;
+                        break;
+                    default:
+                        choice2 = randomNum.nextInt(2);
+                        break;
+                }
+                
+                
+                
+                if (choice2 == 1)
+                {
+                int damage = enemy.attack(player);
+                player.hp = player.hp - damage;
+                System.out.println(damage + " points inflicted. The player's new hp after the attack is " + player.hp);
+                }
 
+                else
+                {
+
+                    if (enemy.healsLeft == 0)
+                    {
+                   
+                    System.out.println("The enemy is out of healing, failed to heal.");
+                    }
+                    else
+                    {
+                  
+                        if (enemy.heal() == false)
+                        {
+                           System.out.println("The enemy failed to heal");
+                        }
+                        else
+                        {
+                        System.out.println("The enemy has healed");
+                        }
+                    }
+                }
+            }
+            } 
+            }
+                
             System.out.println(player.hp + " <- you | the other guy -> " + enemy.hp);
             }
 
