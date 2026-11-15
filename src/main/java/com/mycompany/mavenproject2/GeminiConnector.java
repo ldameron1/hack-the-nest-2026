@@ -23,7 +23,7 @@ public class GeminiConnector {
         String prompt = "You are the enemy in a turn-based combat game. "
         + "Your stats -> HP: " + enemy.hp + "/" + enemy.maxHp
         + ", Heals left: " + enemy.healsLeft + " (each heal restores +5 HP, cannot exceed max HP)"
-        + ", Attack Power: " + enemy.attackPower + " (deals 1 to " + (enemy.attackPower) + " damage). "
+        + ", Attack Power: " + enemy.attackPower + " (deals 0 to " + (enemy.attackPower) + " damage). "
         + "Player stats -> HP: " + player.hp + "/" + player.maxHp
         + ", Heals left: " + player.healsLeft
         + ", Attack Power:  " + player.attackPower + ". "
